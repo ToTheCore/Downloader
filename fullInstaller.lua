@@ -3,13 +3,13 @@ term.setTextColor(colors.green)
 print("Downloading \"installer\" files..")
 term.setTextColor(colors.gray)
 -- Installer files download.
-shell.run("/wget", "https://raw.githubusercontent.com/Downloader/master/fullUpdater.lua","/fullUpdater")
-shell.run("/wget", "https://raw.githubusercontent.com/Downloader/master/wget.lua","/wget")
+shell.run("/wget", "https://raw.githubusercontent.com/ToTheCore/Downloader/master/fullUpdater.lua","/fullUpdater", "-silent")
+shell.run("/wget", "https://raw.githubusercontent.com/ToTheCore/Downloader/master/wget.lua","/wget", "-silent")
 
-shell.run("/wget", "https://raw.githubusercontent.com/Utils/master/installer.lua","/Utils/installer")
-shell.run("/wget", "https://raw.githubusercontent.com/Interface2Inventory/master/installer.lua","/Interface2Inventory/installer")
-shell.run("/wget", "https://raw.githubusercontent.com/MonitorHandler/master/installer.lua","/MonitorHandler/installer")
-shell.run("/wget", "https://raw.githubusercontent.com/IEMP/master/installer.lua","/IEMP/installer")
+shell.run("/wget", "https://raw.githubusercontent.com/ToTheCore/Utils/master/installer.lua","/Utils/installer", "-silent")
+shell.run("/wget", "https://raw.githubusercontent.com/ToTheCore/Interface2Inventory/master/installer.lua","/Interface2Inventory/installer", "-silent")
+shell.run("/wget", "https://raw.githubusercontent.com/ToTheCore/MonitorHandler/master/installer.lua","/MonitorHandler/installer", "-silent")
+shell.run("/wget", "https://raw.githubusercontent.com/ToTheCore/IEMP/master/installer.lua","/IEMP/installer", "-silent")
 
 -- Run installer files
 term.setTextColor(colors.green)

@@ -4,9 +4,12 @@ if (#args < 2) then
   error("Usage: wget [url] [target]")
 end
 
+
 -- Set source and target.
 local source = args[1]
 local target = args[2]
+local silent = #args == 3 and #args or false
+
 
 -- Not valid url -> error.
 if(not http.checkURL(source)) then 
@@ -14,8 +17,10 @@ if(not http.checkURL(source)) then
 end
 
 -- User info.
-term.setTextColor(colors.blue)
-print("Downloading")
+if(not silent) then
+  term.setTextColor(colors.blue)
+  print("Downloading")
+end
 
 local timer = os.startTimer(120)
 http.request(source)
@@ -34,10 +39,12 @@ while true do
 
   if event == "http_success" then
     -- User info: Download complete.
-    term.setTextColor(colors.green)
-    term.write("Done. ")
-    term.setTextColor(colors.gray)
-    term.write("Saving file..")
+    if(not silent) then
+      term.setTextColor(colors.green)
+      term.write("Done. ")
+      term.setTextColor(colors.gray)
+      term.write("Saving file..")
+    end
 
     local file = io.open(target, "w")
     file:write(data.readAll())
@@ -45,7 +52,9 @@ while true do
     data:close()
 
     -- User info: File saved.
-    print("Saved as \"" .. target .. "\"")
+    if(not silent) then
+      print("Saved as \"" .. target .. "\"")
+    end
     return true
   end
 end
