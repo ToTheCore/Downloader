@@ -5,7 +5,8 @@ The automatic downloader for all "To The Core" scripts.
 Enter the following command in the root directory.
 
 ```shell
-/openp/github get ToTheCore/Downloader/master/fullInstaller.lua fullInstaller
+pastebin get QwrHQaZK wget
+wget https://raw.githubusercontent.com/ToTheCore/Downloader/master/fullInstaller.lua wget
 ```
 
 # Install everything
