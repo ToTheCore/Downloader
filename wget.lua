@@ -1,7 +1,7 @@
 -- Not all arguments given -> error.
 local args = {...}
 if (#args < 2) then
-  error("Usage: wget [url] [target]")
+  error("Usage: wget [url] [target] {'-silent'}")
 end
 
 
@@ -43,7 +43,7 @@ while true do
       term.setTextColor(colors.green)
       term.write("Done. ")
       term.setTextColor(colors.gray)
-      term.write("Saving file..")
+      print("Saving file..")
     end
 
     local file = io.open(target, "w")
