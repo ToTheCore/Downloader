@@ -15,10 +15,10 @@ end
 
 -- User info.
 term.setTextColor(colors.blue)
-term.print("Downloading")
+print("Downloading")
 
 local timer = os.startTimer(120)
-http.request(url)
+http.request(source)
 while true do
   local event, id, data = os.pullEvent()
 
@@ -36,7 +36,7 @@ while true do
     -- User info: Download complete.
     term.setTextColor(colors.green)
     term.write("Done. ")
-    term.setTextColor(Colors.gray)
+    term.setTextColor(colors.gray)
     term.write("Saving file..")
 
     local file = io.open(target, "w")
@@ -45,7 +45,7 @@ while true do
     data:close()
 
     -- User info: File saved.
-    term.print("Saved as \"" .. target .. "\"")
+    print("Saved as \"" .. target .. "\"")
     return true
   end
 end
