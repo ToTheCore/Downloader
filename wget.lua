@@ -4,12 +4,10 @@ if (#args < 2) then
   error("Usage: wget [url] [target] {'-silent'}")
 end
 
-
 -- Set source and target.
 local source = args[1]
 local target = args[2]
 local silent = #args == 3 and #args or false
-
 
 -- Not valid url -> error.
 if(not http.checkURL(source)) then 
