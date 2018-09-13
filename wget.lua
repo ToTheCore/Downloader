@@ -32,7 +32,7 @@ while true do
 
   -- Download failed -> error.
   if (event == "http_failure") then
-    error("Download: Faild to download file.")
+    error("Download: Faild to download file. Url: " .. source)
   end
 
   if event == "http_success" then
